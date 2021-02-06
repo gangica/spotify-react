@@ -1,0 +1,106 @@
+.track__pic {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+.track__info {
+    display: flex;
+    margin: 0px 20px 20px 0px;
+    width: 100%
+}
+
+.track__info2 {
+    display: flex;
+    width: 100%
+}
+
+.track__container {
+    display: grid;
+    margin-left: 20px; 
+    width: 100%;
+}
+
+.track__duration {
+    margin: auto;
+    font-size: 14;
+    color: rgb(194, 194, 194)
+}
+
+.tracklist__container {
+    width: 70%;
+    align-self: center
+}
+
+.play {
+    display: inline !important;
+    padding: 10px 12px !important;
+    background: #1db954 !important;
+    border: none !important;
+}
+
+.detail {
+    align-items: center;
+}
+
+.detail__container {
+    display: block;
+    margin-left: 40px;
+    width: 100%;
+}
+
+.detail__image {
+    max-width: 250px;
+}
+
+.detail__name {
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 10px 0;
+}
+
+.detail__artist {
+    color: rgb(170, 170, 170);
+    margin: 10px 0;
+}
+
+.detail__album {
+    color: rgb(170, 170, 170);
+    margin: 10px 0;
+    font-weight: lighter;
+}
+
+.detail__stats {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid rgb(64, 64, 64);
+    border-left: 1px solid rgb(64, 64, 64);
+}
+
+.stats__item {
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(64, 64, 64);
+    border-right: 1px solid rgb(64, 64, 64);
+}
+
+.stats__num {
+    margin-bottom: 0
+}
+
+.stats__title {
+    font-size: smaller;
+    color: gray;
+    font-weight: bold;
+}
+
+.spotify {
+    margin: 20px 0 !important
+}
+
+.feature__chart {
+    max-width: 800px;
+    margin: 0 auto;
+}

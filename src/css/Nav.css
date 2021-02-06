@@ -1,0 +1,47 @@
+.Nav {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 230px;
+    min-height: 100vh;
+    color: white;
+    background-color: #040404;
+    align-items: center;
+}
+
+.Nav__logo {
+    margin-right: auto;
+    object-fit: contain;
+    height: 70px;
+    padding: 10px;
+  }
+
+.Nav__item {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    height: 40px;
+    color: grey;
+    transition: 200ms color ease-in;
+  }
+  
+  .Nav__item:hover {
+    color: grey;
+  }
+  
+  .Nav__item > hr {
+    border: 1px solid #282828;
+    width: 90%;
+    margin: 10px auto;
+  }
+  
+  .Nav__icon {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .Nav__item > p {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+  }

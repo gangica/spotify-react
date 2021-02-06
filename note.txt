@@ -1,0 +1,8 @@
+Get Current User's Profile
+Get User's Followed Artists
+ * Get Current User's Recently Played Tracks
+ * Get a List of Current User's Playlists
+ * Get a User's Top Artists
+ * Get a User's Top Tracks
+ * Get an Artist
+ * Get Recommendations Based on Seeds

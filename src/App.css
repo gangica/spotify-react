@@ -1,5 +1,20 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.app {
+  display: flex;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  color: white;
+  margin: 0
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
