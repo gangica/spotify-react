@@ -8,7 +8,6 @@ export const initialState = {
   },
   topArtists: null,
   playlists: null,
-  recent: null,
   token: null
 };
 
@@ -71,12 +70,6 @@ const reducer = (state, action) => {
         ...state,
         playlists: action.playlists,
       };
-
-    case "SET_RECENT":
-        return {
-          ...state,
-          recent: action.recent,
-        };  
 
     default:
       return state;

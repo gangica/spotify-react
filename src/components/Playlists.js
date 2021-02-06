@@ -6,25 +6,6 @@ import axios from 'axios';
 
 const Playlists = () => {
     const [{ playlists }] = useStateValue();
-    const [{ token }, dispatch] = useStateValue();
-
-    const headers = {
-        'Authorization': 'Bearer ' + token
-    };
-
-    useEffect(() => {
-        // Get playlists
-        axios('https://api.spotify.com/v1/me/playlists', {
-            method: 'GET',
-            headers
-        })
-            .then(playlists => {
-                dispatch({
-                    type: "SET_PLAYLISTS",
-                    playlists: playlists.data.items
-                });
-            })  
-    }, [])
 
     return (
         <div className="user__column">

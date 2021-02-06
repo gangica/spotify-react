@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import TrackList from "./TrackList";
 import { useStateValue } from "../context/StateProvider";
 import axios from 'axios';
 
 const Recent = () => {
-    const [{ recent }] = useStateValue();
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token }] = useStateValue();
+    const [recent, setRecent] = useState();
 
     const headers = {
         'Authorization': 'Bearer ' + token
@@ -18,10 +18,7 @@ const Recent = () => {
             headers
         })
             .then(recent => {
-                dispatch({
-                    type: "SET_RECENT",
-                    recent: recent.data.items.map(item => item.track)
-                });
+                setRecent(recent.data.items.map(item => item.track))
             }) 
     }, [])
 
