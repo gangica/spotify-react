@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/Track.css";
 import { convertTrackDuration } from "../context/util";
 import { Link } from "react-router-dom";
 
 const Track = ({ id, images, artists, name, duration, href }) => {
-
     return (
         <li className="track__info">
             <Link to={{
@@ -20,7 +19,7 @@ const Track = ({ id, images, artists, name, duration, href }) => {
             <span className="track__duration">{convertTrackDuration(duration)}</span>
             </Link>
             
-            <span style={{ margin: "auto"}}><a href={href} target="_blank" className="more play">▶</a></span>
+            <span style={{ margin: "auto"}}><a href={href} target="_blank" className="play">▶</a></span>
         </li>
     );
 }

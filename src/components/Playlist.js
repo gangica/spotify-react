@@ -21,11 +21,7 @@ const Playlist = ({ location }) => {
             method: 'GET',
             headers
         })
-            .then(tracks => {
-                let temp = [];
-                tracks.data.items.map(item => temp.push(item.track));
-                setPlaylistTracks(temp);
-            })
+            .then(res => setPlaylistTracks(res.data.items.map(item => item.track)))
     }, [])
 
     useEffect(() => {
@@ -37,9 +33,7 @@ const Playlist = ({ location }) => {
                 method: 'GET',
                 headers
             })
-                .then(f => {
-                    setFeatures(f.data.audio_features);
-                })  
+                .then(res => setFeatures(res.data.audio_features))  
         }
     }, [playlistTracks])
     

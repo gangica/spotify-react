@@ -4,14 +4,15 @@ import { useStateValue } from "../context/StateProvider";
 
 const TopArtists = () => {
     const [{ topArtists }] = useStateValue();
+    const { long } = topArtists;
 
     return (
         <div className="user__column" style={{alignContent: "flex-start"}}>
             <div className="heading">
                 <h3 className="user__info">Artists</h3>
-                <span><button className="more">See More</button></span>
+                <span><a href="/artists" className="more">See More</a></span>
             </div>
-            {topArtists && <ArtistList data={topArtists.slice(0, 10)} />}
+            {long && <ArtistList data={long.slice(0, 10)} />}
         </div>
     )
 }

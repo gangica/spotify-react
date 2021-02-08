@@ -49,3 +49,23 @@ export const modeToMode = (mode) => {
 
     return null
 }
+
+export const capitaliseLetter = (string) => {
+    return string.split(" ").map(w => (w.charAt(0).toUpperCase() + w.slice(1))).join(" ");
+}  
+
+export const formatFollowers = (n) => {
+    let display = "";
+
+    if (n >= 10000 && n < 100000) {
+        display = (n/1000).toString().slice(0,4) + "K";
+    } else if (n >= 100000 && n < 1000000) {
+        display = (n/1000).toString().slice(0,3) + "K";
+    } else if (n >= 1000000) {
+        display = (n/1000000).toFixed(2) + "M"
+    } else {
+        display = n.toString();
+    }
+    
+    return display
+}

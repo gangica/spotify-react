@@ -44,6 +44,12 @@
     justify-items: center;
 }
 
+.playlist__detail h3 {
+    color: rgb(170, 170, 170);
+    margin: 0;
+    text-align: center;
+}
+
 .playlist__name {
     font-weight: bold;
     font-size: xx-large;

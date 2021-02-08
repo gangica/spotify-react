@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import '../css/Playlist.css';
 import { useStateValue } from "../context/StateProvider";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 const Playlists = () => {
     const [{ playlists }] = useStateValue();

@@ -21,9 +21,12 @@
 }
 
 .artist__pic__large {
+    width: 200px;
+    height: 200px;
     max-width: 100%;
-    height: 250px;
     margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 .artist__item {
@@ -32,4 +35,15 @@
 
 .artist__title {
     font-weight: bold;
+}
+
+.genre {
+    color: rgb(170, 170, 170);
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.artist__tracks {
+    margin-left: 60px;
+    width: 100%;
 }

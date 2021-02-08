@@ -22,16 +22,16 @@ const TrackDetail = ({ location }) => {
             method: 'GET',
             headers
         })
-            .then(info => {
+            .then(res => {
                 setInfo({
-                    name: info.data.name,
-                    artist: info.data.artists.map(a => a.name),
-                    image: info.data.album.images[1].url,
-                    album: info.data.album.name,
-                    year: info.data.album.release_date.slice(0,4),
-                    popularity: info.data.popularity,
-                    duration: info.data.duration_ms,
-                    href: info.data.external_urls.spotify
+                    name: res.data.name,
+                    artist: res.data.artists.map(a => a.name),
+                    image: res.data.album.images[1].url,
+                    album: res.data.album.name,
+                    year: res.data.album.release_date.slice(0,4),
+                    popularity: res.data.popularity,
+                    duration: res.data.duration_ms,
+                    href: res.data.external_urls.spotify
                 });
             })
 
@@ -40,11 +40,7 @@ const TrackDetail = ({ location }) => {
             method: 'GET',
             headers
         })
-            .then(feature => {
-                let temp = [];
-                temp.push(feature.data);
-                setFeature(temp);
-            })
+            .then(res => setFeature([res.data]))
     }, [])
 
     return (

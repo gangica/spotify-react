@@ -17,9 +17,7 @@ const Recent = () => {
             method: 'GET',
             headers
         })
-            .then(recent => {
-                setRecent(recent.data.items.map(item => item.track))
-            }) 
+            .then(res => setRecent(res.data.items.map(item => item.track))) 
     }, [])
 
     return (

@@ -10,6 +10,7 @@ import FullTopArtists from "./FullTopArtists";
 import FullTopTracks from "./FullTopTracks";
 import TrackDetail from "./TrackDetail";
 import Playlist from "./Playlist";
+import Artist from "./Artist";
 
 const Main = () => {
     const [{ token }, dispatch] = useStateValue();
@@ -24,10 +25,10 @@ const Main = () => {
             method: 'GET',
             headers
         })
-            .then(user => {
+            .then(res => {
                 dispatch({
                     type: "SET_USER",
-                    user: user.data
+                    user: res.data
                 });
             })
         
@@ -36,70 +37,96 @@ const Main = () => {
             method: 'GET',
             headers
         })
-            .then(response => {
+            .then(res => {
                 dispatch({
                     type: "SET_FOLLOWING",
-                    following: response.data.artists.items.length
+                    following: res.data.artists.items.length
                 });
             }) 
 
-        // Get top tracks long range
+        /* Get top tracks */
+        // Long range
         axios('https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=long_term', {
             method: 'GET',
             headers
         })
-            .then(tracks => {
+            .then(res => {
                 dispatch({
                     type: "SET_TOPTRACKS_LONG",
-                    topTracks: tracks.data.items
+                    topTracks: res.data.items
                 });
             })
 
-        // Get top tracks medium range
+        // Mid range
         axios('https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=medium_term', {
             method: 'GET',
             headers
         })
-            .then(tracks => {
+            .then(res => {
                 dispatch({
                     type: "SET_TOPTRACKS_MED",
-                    topTracks: tracks.data.items
+                    topTracks: res.data.items
                 });
             })  
             
-        // Get top tracks short range
+        // Short range
         axios('https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=short_term', {
             method: 'GET',
             headers
         })
-            .then(tracks => {
+            .then(res => {
                 dispatch({
                     type: "SET_TOPTRACKS_SHORT",
-                    topTracks: tracks.data.items
+                    topTracks: res.data.items
                 });
             })    
 
-        // Get top artists    
-        axios('https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term', {
+        /* Get Top Artists */
+        // Long range 
+        axios('https://api.spotify.com/v1/me/top/artists?limit=20&time_range=long_term', {
             method: 'GET',
             headers
         })
-            .then(artists => {
+            .then(res => {
                 dispatch({
-                    type: "SET_TOPARTISTS",
-                    topArtists: artists.data.items
+                    type: "SET_TOPARTISTS_LONG",
+                    topArtists: res.data.items
                 });
             })
+
+        // Mid range 
+        axios('https://api.spotify.com/v1/me/top/artists?limit=20&time_range=medium_term', {
+            method: 'GET',
+            headers
+        })
+            .then(res => {
+                dispatch({
+                    type: "SET_TOPARTISTS_MED",
+                    topArtists: res.data.items
+                });
+            })
+         
+        // Short range     
+        axios('https://api.spotify.com/v1/me/top/artists?limit=20&time_range=short_term', {
+            method: 'GET',
+            headers
+        })
+            .then(res => {
+                dispatch({
+                    type: "SET_TOPARTISTS_SHORT",
+                    topArtists: res.data.items
+                });
+            })  
 
         // Get playlists
         axios('https://api.spotify.com/v1/me/playlists', {
             method: 'GET',
             headers
         })
-            .then(playlists => {
+            .then(res => {
                 dispatch({
                     type: "SET_PLAYLISTS",
-                    playlists: playlists.data.items
+                    playlists: res.data.items
                 });
             })     
     }, []);
@@ -126,6 +153,8 @@ const Main = () => {
                 <Route path="/detail" component={TrackDetail}>
                 </Route>
                 <Route path="/playlist/:playlistId" component={Playlist}>
+                </Route>
+                <Route path="/artist/:artistId" component={Artist}>
                 </Route>
             </Switch>
         </Router>

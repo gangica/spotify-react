@@ -33,10 +33,27 @@
 }
 
 .play {
-    display: inline !important;
-    padding: 10px 12px !important;
-    background: #1db954 !important;
-    border: none !important;
+    display: inline;
+    padding: 10px 12px;
+    background: #1db954;
+    border: none;
+    color:white;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.3, 0, 0.4, 1) 0s;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: 15px;
+    font-family: 'Lato';
+}
+
+.play:hover {
+    color: rgb(64, 64, 64);
+    background: white;
 }
 
 .detail {

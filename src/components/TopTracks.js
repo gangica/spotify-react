@@ -10,7 +10,7 @@ const TopTracks = () => {
         <div className="user__column">
             <div className="heading">
                 <h3 className="user__info">Top Tracks</h3>
-                <span><button className="more">See More</button></span>
+                <span><a href="/tracks" className="more">See More</a></span>
             </div>
             {long && <TrackList data={long.slice(0,10)} />}
         </div>

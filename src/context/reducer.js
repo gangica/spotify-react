@@ -6,7 +6,11 @@ export const initialState = {
     medium: null,
     short: null
   },
-  topArtists: null,
+  topArtists: {
+    long: null,
+    medium: null,
+    short: null
+  },
   playlists: null,
   token: null
 };
@@ -14,6 +18,7 @@ export const initialState = {
 const reducer = (state, action) => {
   // console.log(action);
   switch (action.type) {
+    // set user data
     case "SET_USER":
       return {
         ...state,
@@ -32,6 +37,7 @@ const reducer = (state, action) => {
         following: action.following,
       };  
 
+    // set top tracks
     case "SET_TOPTRACKS_LONG":
       return {
         ...state,
@@ -59,12 +65,35 @@ const reducer = (state, action) => {
         }
       };   
     
-    case "SET_TOPARTISTS":
+    // set top artists
+    case "SET_TOPARTISTS_LONG":
       return {
         ...state,
-        topArtists: action.topArtists,
+        topArtists: {
+          ...state.topArtists,
+          long: action.topArtists
+        }
       };
+
+    case "SET_TOPARTISTS_MED":
+      return {
+        ...state,
+        topArtists: {
+          ...state.topArtists,
+          medium: action.topArtists
+        }
+      }; 
     
+    case "SET_TOPARTISTS_SHORT":
+      return {
+        ...state,
+        topArtists: {
+          ...state.topArtists,
+          short: action.topArtists
+        }
+      };   
+    
+    // set playlists
     case "SET_PLAYLISTS":
       return {
         ...state,
