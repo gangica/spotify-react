@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useStateValue } from "../context/StateProvider";
 import "../css/Track.css";
 import Chart from 'chart.js';
 

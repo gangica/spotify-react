@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ArtistList from "./ArtistList";
 import { useStateValue } from "../context/StateProvider";
 

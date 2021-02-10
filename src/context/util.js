@@ -27,7 +27,7 @@ export const noteToKey = (note) => {
     }
 
     for (let key in converter) {
-        if (converter[key] == note) {
+        if (converter[key] === note) {
             return key;
         }
     }
@@ -42,7 +42,7 @@ export const modeToMode = (mode) => {
     }
 
     for (let key in converter) {
-        if (converter[key] == mode) {
+        if (converter[key] === mode) {
             return key
         }
     }
@@ -62,10 +62,10 @@ export const formatFollowers = (n) => {
     } else if (n >= 100000 && n < 1000000) {
         display = (n/1000).toString().slice(0,3) + "K";
     } else if (n >= 1000000) {
-        display = (n/1000000).toFixed(2) + "M"
+        display = (n/1000000).toFixed(1) + "M"
     } else {
         display = n.toString();
     }
-    
+
     return display
 }

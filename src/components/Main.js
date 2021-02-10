@@ -8,9 +8,10 @@ import Playlists from "./Playlists";
 import Recent from "./Recent";
 import FullTopArtists from "./FullTopArtists";
 import FullTopTracks from "./FullTopTracks";
-import TrackDetail from "./TrackDetail";
+import Track from "./Track";
 import Playlist from "./Playlist";
 import Artist from "./Artist";
+import Recommendation from "./Recommendation";
 
 const Main = () => {
     const [{ token }, dispatch] = useStateValue();
@@ -150,11 +151,13 @@ const Main = () => {
                 <Route path="/recent">
                     <Recent />
                 </Route>
-                <Route path="/detail" component={TrackDetail}>
+                <Route path="/track/:trackId" component={Track}>
                 </Route>
                 <Route path="/playlist/:playlistId" component={Playlist}>
                 </Route>
                 <Route path="/artist/:artistId" component={Artist}>
+                </Route>
+                <Route path="/recommendation" component={Recommendation}>
                 </Route>
             </Switch>
         </Router>

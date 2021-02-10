@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useStateValue } from "../context/StateProvider";
 import TopArtists from "./TopArtists";
 import TopTracks from "./TopTracks";

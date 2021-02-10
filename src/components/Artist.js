@@ -7,7 +7,7 @@ import { capitaliseLetter, formatFollowers } from "../context/util";
 
 const Artist = ({ location }) => {
     const { id } = location.state;
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token }] = useStateValue();
     const [info, setInfo] = useState();
     const [popularTracks, setPopularTracks] = useState();
 
@@ -28,9 +28,7 @@ const Artist = ({ location }) => {
             method: 'GET',
             headers
         }) 
-            .then(res => {
-                setPopularTracks(res.data.tracks.map(track => track));
-            }) 
+            .then(res => setPopularTracks(res.data.tracks));
     }, [])
 
     return (
@@ -43,9 +41,9 @@ const Artist = ({ location }) => {
                     <div className="playlist__detail">
                         <h1 className="playlist__name">{info.name}</h1>
                         <h3>{formatFollowers(info.followers.total)} Followers</h3>
-                        <button className="more spotify">
-                            Follow
-                        </button>
+                        <a href={info.external_urls.spotify} target="_blank" rel="noreferrer" className="more spotify">
+                            Follow on spotify
+                        </a>
                     </div>
                 </div>)}
                 <div className="artist__tracks">
