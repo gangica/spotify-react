@@ -8,22 +8,21 @@ const FullTopTracks = () => {
     const [range, setRange] = useState('medium');
 
     return (
-        <div className="user__column">
-            <div className="tracklist__container">
+        <div className="main">
+            <div className="main__container">
                 <div className="heading">
-                    <h2 className="user__info">Top Tracks</h2>
-                    <span>
+                    <h1 className="user__info">Your Top Tracks</h1>
+                    <div className="time__range">
                         <button className={range === "long" ? "more more__active" : "more"} onClick={() => setRange('long')}>
                             All Time
-                    </button></span>
-                    <span>
+                        </button>
                         <button className={range === "medium" ? "more more__active" : "more"} onClick={() => setRange('medium')}>
-                            Last 6 Months
-                    </button></span>
-                    <span>
+                            6 Months
+                        </button>
                         <button className={range === "short" ? "more more__active" : "more"} onClick={() => setRange('short')}>
-                            Last 4 Weeks
-                    </button></span>
+                            4 Weeks
+                        </button>
+                    </div>
                 </div>
                 {(range === 'long' && long) && <TrackList data={long} />}
                 {(range === 'medium' && medium) && <TrackList data={medium} />}

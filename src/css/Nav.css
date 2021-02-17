@@ -1,12 +1,15 @@
 .Nav {
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    min-width: 230px;
+    min-width: 150px;
     min-height: 100vh;
     color: white;
     background-color: #040404;
-    align-items: center;
+}
+
+.Nav__container {
+    position: fixed;
+    width: 150px;
 }
 
 .Nav__logo {
@@ -17,16 +20,17 @@
   }
 
 .Nav__item {
-    display: flex;
     cursor: pointer;
-    align-items: center;
-    height: 40px;
-    color: grey;
     transition: 200ms color ease-in;
+    display: flex;
+    justify-items: center;
   }
   
   .Nav__item:hover {
     color: grey;
+    background: #282828;
+    -webkit-transition: color 0.1s;
+    transition: color 0.1s;
   }
   
   .Nav__item > hr {
@@ -34,14 +38,102 @@
     width: 90%;
     margin: 10px auto;
   }
+
+  .Nav__item > :last-child {
+    width: 100%;
+  }
   
   .Nav__icon {
     padding-left: 10px;
     padding-right: 10px;
   }
-  
-  .Nav__item > p {
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 14px;
+
+  .Nav__brand {
+    text-align: center;
+    margin: 40px 0;
   }
+  
+  .Nav__item > span > p {
+    font-size: 14px;
+    color: rgb(170, 170, 170);
+    margin-top: 5px;
+  }
+
+  .Nav__item-wrapper {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .menu__icons {
+    height: 30px;
+    padding-top: 20px
+  }
+
+.active {
+    height: auto;
+    background: #7ad768;
+    width: 3px;
+}
+
+@media screen and (max-width: 576px) {
+  .Nav {
+    background-color:#040404;
+    position: fixed;
+    top: auto;
+    bottom: 0px;
+    width: 100%;
+    min-height: 80px;
+    flex-direction: row;
+    z-index: 99;
+  }
+
+  .Nav__container {
+    width: 100%;
+  }
+
+  .Nav__brand {
+    display: none;
+  }
+
+  .Nav__item-wrapper {
+    width: 100%;
+    overflow: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .menu__icons {
+    padding-top: 14px;
+  }
+
+  .Nav__item {
+    display: grid
+  }
+
+  .Nav__link {
+    width: 20%
+  }
+
+  .Nav__item > :last-child {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 80px
+  }
+
+  .Nav__item > span > p {
+    font-size: 12px;
+    margin: 0
+  }
+
+  .active {
+    height: 3px;
+    background: #7ad768;
+    width: 100%;
+  }
+  
+}

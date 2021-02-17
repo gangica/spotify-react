@@ -1,8 +1,9 @@
 .artist__pic {
-    height: 50px;
-    width: 50px;
     border-radius: 100%;
     vertical-align: middle;
+    height: 50px;
+    min-width: 50px;
+    object-fit: cover;
 }
 
 .artist__info {
@@ -16,7 +17,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -40,10 +41,94 @@
 .genre {
     color: rgb(170, 170, 170);
     font-weight: bold;
-    margin-bottom: 40px;
+    margin: 5px 0 40px 0;
 }
 
 .artist__tracks {
     margin-left: 60px;
     width: 100%;
+}
+
+.artist__img {
+    text-align: center
+}
+
+@media screen and (max-width: 576px) {
+    .artist__pic {
+        height: 40px;
+        min-width: 40px
+    }
+
+    .artist__pic__large {
+        width: 150px;
+        height: 150px;
+    }
+
+    .artist__container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .time__range {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px
+    }
+
+    .artist__tracks {
+        margin: 0 auto;
+    }
+
+    .artist__tracks > h2, h3 {
+        text-align: center;
+    }
+
+    .cover__img {
+        width: 70%;
+        margin: 0 auto
+    }
+
+    .cover__img > img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .artist__pic {
+        height: 40px;
+        min-width: 40px
+    }
+
+    .artist__pic__large {
+        width: 150px;
+        height: 150px;
+    }
+
+    .artist__container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .time__range {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px
+    }
+
+    .artist__tracks {
+        margin: 0 auto;
+    }
+
+    .artist__tracks > h2, h3 {
+        text-align: center;
+    }
+
+    .cover__img {
+        width: 70%;
+        margin: 0 auto
+    }
+
+    .cover__img > img {
+        width: 100%;
+        max-width: 100%;
+    }
 }

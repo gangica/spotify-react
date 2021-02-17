@@ -32,10 +32,10 @@ const Artist = ({ location }) => {
     }, [])
 
     return (
-        <div className="user__column">
-            <div className="playlist__container2">
+        <div className="main">
+            <div className="flex__container">
                 {info && (<div className="playlist__info">
-                    <div className="center">
+                    <div className="cover__img">
                         <img src={info.images[1].url} alt="Track Pic" style={{ margin: "20px 0" }} />
                     </div>
                     <div className="playlist__detail">
@@ -47,8 +47,8 @@ const Artist = ({ location }) => {
                     </div>
                 </div>)}
                 <div className="artist__tracks">
-                    <h2>Genre</h2>
-                    <p className="genre">{info && info.genres.map(g => capitaliseLetter(g)).join(", ")}</p>
+                    <h2 style={{ marginBottom: 0 }}>Genre</h2>
+                    <h3 className="genre">{info && info.genres.map(g => capitaliseLetter(g)).join(", ")}</h3>
                     <h2>Popular Tracks</h2>
                     {popularTracks && <TrackList data={popularTracks} />}
                 </div>

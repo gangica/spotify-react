@@ -21,10 +21,10 @@ const Recent = () => {
     }, [])
 
     return (
-        <div className="user__column">
-            <div className="tracklist__container">
+        <div className="main">
+            <div className="main__container">
                 <div className="heading">
-                    <h2 className="user__info">Recently Played Tracks</h2>
+                    <h1 className="user__info">Recently Played Tracks</h1>
                 </div>
                 {recent && <TrackList data={recent} />}
             </div>

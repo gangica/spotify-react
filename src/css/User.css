@@ -1,27 +1,12 @@
-.user {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    width: 100%;
-    min-height: 100vh;
-    color: white;
-    /* background: linear-gradient(transparent, rgb(39, 39, 39)); */
-    background-color: rgb(27, 27, 27);
-    align-items: center;
-  }
+.topten {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 100%;
+  color: white;
+}
 
-  .user__column {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    width: 100%;
-    min-height: 100vh;
-    color: white;
-    /* background: linear-gradient(transparent, rgb(39, 39, 39)); */
-    background-color: rgb(27, 27, 27);
-  }  
-  
-.player_body {
+.list__container {
     display: flex;
     flex-grow: 1;
     width: 80%;
@@ -29,6 +14,7 @@
 
 .user__info {
     display: flex;
+    margin-bottom: 20px;
     flex: 1
 }
 
@@ -37,32 +23,47 @@
     text-align: center;
 }
 
-.more {
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    padding: 11px 24px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.3, 0, 0.4, 1) 0s;
-    text-align: center;
-    white-space: nowrap;
-    margin-left: 15px;
-    font-family: 'Lato';
-    background: transparent;
+.user__stats h1 {
+  margin: 5px;
+  color: #7ad768
 }
 
-.more:hover, .more__active {
-  color: #282c34;
-  background: white
+.heading2 {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
-.heading {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.heading2 > h2 {
+  display: flex;
+  flex: 1;
+}
+
+.avatar {
+  max-width: 200px;
+  margin-top: 40px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .list__container {
+    display: block;
+    width: 90%;
+  }
+
+  .topten {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .list__container {
+    display: block;
+    width: 90%;
+  }
+
+  .topten {
+    padding: 0;
+  }
 }

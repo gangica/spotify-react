@@ -4,9 +4,9 @@ import "../css/Artist.css";
 
 const ArtistGrid = ({ data }) => {
     return (
-        <ul id="playlist" className="playlist__container">
-            {data && data.map(artist => (
-                <Link key={artist.id} to={{
+        <ul className="artist__container">
+            {data && data.map((artist, i) => (
+                <Link key={i} to={{
                     pathname: `/artist/${artist.id}`,
                     state: { id: artist.id },
                 }}>

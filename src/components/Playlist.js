@@ -45,10 +45,10 @@ const Playlist = ({ location }) => {
     }, [trackIds])
     
     return (
-        <div className="user__column">
-            <div className="playlist__container2">
+        <div className="main">
+            <div className="flex__container">
                 {data && (<div className="playlist__info">
-                    <div className="center">
+                    <div className="cover__img">
                         <img src={data.images[0].url} alt="Track Pic" className="playlist__pic" />
                     </div>
                     <div className="playlist__detail">
@@ -56,10 +56,10 @@ const Playlist = ({ location }) => {
                         <h4 className="playlist__owner">{data.tracks.total + " TRACKS · By " + data.owner.display_name}</h4>
                         <Link to={{
                             pathname: "/recommendation",
-                            state: { ids: trackIds }
-                        }}><button className="more spotify">
+                            state: { ids: trackIds },
+                        }} className="more spotify">
                             Get Recommendations
-                        </button></Link>
+                            </Link>
                         {features && <FeatureChart data={features} />}
                     </div>
                 </div>)}

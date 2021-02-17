@@ -44,7 +44,7 @@ const FeatureChart = (features) => {
                     display: true,
                     text: 'Audio Features',
                     fontSize: 16,
-                    fontFamily: 'Lato',
+                    fontFamily: 'Heebo',
                     fontColor: '#ffffff',
                     padding: 30,
                 },

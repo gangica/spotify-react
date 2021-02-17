@@ -57,7 +57,9 @@ export const capitaliseLetter = (string) => {
 export const formatFollowers = (n) => {
     let display = "";
 
-    if (n >= 10000 && n < 100000) {
+    if (n >= 1000 && n < 10000) {
+        display = (n/1000).toString().slice(0,3) + "K";
+    } else if (n >= 10000 && n < 100000) {
         display = (n/1000).toString().slice(0,4) + "K";
     } else if (n >= 100000 && n < 1000000) {
         display = (n/1000).toString().slice(0,3) + "K";

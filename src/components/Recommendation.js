@@ -8,7 +8,7 @@ const Recommendation = ({ location }) => {
     const [recommendation, setRecommendation] = useState();
 
     const shuffledTracks = location.state.ids;
-    const seed_tracks = shuffledTracks.split(",").sort(() => 0.5 - Math.random()).slice(0, 1).join(",");
+    const seed_tracks = shuffledTracks.split(",").sort(() => 0.5 - Math.random()).slice(0, 5).join(",");
     const seed_artists = '';
     const seed_genres = '';
 
@@ -26,10 +26,10 @@ const Recommendation = ({ location }) => {
     }, [])
 
     return (
-        <div className="user__column">
-            <div className="tracklist__container">
+        <div className="main">
+            <div className="main__container">
                 <div className="heading">
-                    <h2 className="user__info">Recommended Tracks</h2>
+                    <h1 className="user__info">Recommended Tracks</h1>
                 </div>
                 {recommendation && <TrackList data={recommendation} />}
             </div>

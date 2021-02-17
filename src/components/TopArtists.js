@@ -7,10 +7,10 @@ const TopArtists = () => {
     const { long } = topArtists;
 
     return (
-        <div className="user__column" style={{alignContent: "flex-start"}}>
-            <div className="heading">
-                <h3 className="user__info">Artists</h3>
-                <span><a href="/artists" className="more">See More</a></span>
+        <div className="topten" style={{alignContent: "flex-start"}}>
+            <div className="heading2">
+                <h2>Your Top Artists</h2>
+                <a href="/artists" className="more" style={{ width: "auto" }}>See More</a>
             </div>
             {long && <ArtistList data={long.slice(0, 10)} />}
         </div>

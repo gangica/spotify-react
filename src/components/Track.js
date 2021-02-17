@@ -40,18 +40,14 @@ const Track = ({ location }) => {
             method: 'GET',
             headers
         })
-            .then(res => setFeature([res.data]))
+            .then(res => setFeature(res.data))
     }, [])
 
     return (
-        <div className="user__column">
-            <div className="tracklist__container">
-                <div className="heading">
-                    <h2 className="user__info">Track Info</h2>
-                </div>
-                
+        <div className="main">
+            <div className="main__container">
                 {info && (<div className="track__info detail">
-                    <img src={info.image} alt="Track Pic" />
+                    <div className="track__img"><img src={info.image} alt="Track Pic" /></div>
                     <div className="detail__container">
                         <h1 className="detail__name">{info.name}</h1>
                         <h2 className="detail__artist">{info.artist.join(", ")}</h2>
@@ -72,21 +68,25 @@ const Track = ({ location }) => {
                         <p className="stats__title">Duration</p>
                     </div>
                     <div className="stats__item">
-                        <h2 className="stats__num">{noteToKey(feature[0].key)}</h2>
+                        <h2 className="stats__num">{noteToKey(feature.key)}</h2>
                         <p className="stats__title">Key</p>
                     </div>
                     <div className="stats__item">
-                        <h2 className="stats__num">{modeToMode(feature[0].mode)}</h2>
+                        <h2 className="stats__num">{modeToMode(feature.mode)}</h2>
                         <p className="stats__title">Mode</p>
                     </div>
                     <div className="stats__item">
-                        <h2 className="stats__num">{parseInt(feature[0].tempo)}</h2>
+                        <h2 className="stats__num">{parseInt(feature.tempo)}</h2>
                         <p className="stats__title">Tempo (BPM)</p>
+                    </div>
+                    <div className="stats__item">
+                        <h2 className="stats__num">{feature.loudness.toFixed(2)}</h2>
+                        <p className="stats__title">Loudness</p>
                     </div>
                 </div>)}
                 
                 <div className="feature__chart">
-                    {feature && <FeatureChart data={feature} />}
+                    {feature && <FeatureChart data={[feature]} />}
                 </div>
                
             </div></div>

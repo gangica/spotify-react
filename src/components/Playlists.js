@@ -7,21 +7,21 @@ const Playlists = () => {
     const [{ playlists }] = useStateValue();
 
     return (
-        <div className="user__column">
-            <div className="tracklist__container">
+        <div className="main">
+            <div className="main__container">
                 <div className="heading">
-                    <h2 className="user__info">Playlists</h2>
+                    <h1 className="user__info">Your Playlists</h1>
                 </div>
-                <ul id="playlist" className="playlist__container">
-                    {playlists && playlists.map(p => (
-                        <Link to={{
+                <ul id="playlist" className="grid__container">
+                    {playlists && playlists.map((p, i) => (
+                        <Link key={i} to={{
                             pathname: `/playlist/${p.id}`,
                             state: { data: p }
                         }}>
-                            <li key={p.id} className="playlist__item">
+                            <li className="playlist__item">
                                 <img src={p.images[0].url} alt="Artist Profile Pic" className="playlist__pic" />
-                                <span className="playlist__title">{p.name}</span>
-                                <span className="playlist__total">{p.tracks.total} TRACKS</span>
+                                <h2 className="playlist__title">{p.name}</h2>
+                                <p className="playlist__total">{p.tracks.total} TRACKS</p>
                             </li>
                         </Link>
                     ))}

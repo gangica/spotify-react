@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Track.css";
 import { convertTrackDuration } from "../context/util";
 import { Link } from "react-router-dom";
@@ -25,8 +25,8 @@ const TrackList = ({ data }) => {
 
     return (
         <ul id="tracklist" className="list">
-            {display.map(d => (
-                <li className="track__info">
+            {display.map((d, i) => (
+                <li key={i} className="track__info">
                     <Link to={{
                         pathname: `/track/${d.id}`,
                         state: { id: d.id }
@@ -35,7 +35,7 @@ const TrackList = ({ data }) => {
 
                         <div className="track__container">
                             <span style={{ fontWeight: "bold" }}>{d.name}</span>
-                            <span style={{ marginTop: 5, color: "rgb(170, 170, 170)" }}>{d.artists.map(artist => artist.name).join(", ")}</span>
+                            <span style={{ color: "rgb(170, 170, 170)" }}>{d.artists.map(artist => artist.name).join(", ")}</span>
                         </div>
                         <span className="track__duration">{convertTrackDuration(d.duration_ms)}</span>
                     </Link>
@@ -43,7 +43,7 @@ const TrackList = ({ data }) => {
                     <span style={{ margin: "auto" }}><a href={d.external_urls.spotify} target="_blank" rel="noreferrer" className="play">▶</a></span>
                 </li>
             ))}
-            {seeMoreBtn && <button className="more spotify" onClick={() => setLazyload(!lazyload)}>{lazyload ? "See more" : "See less"}</button>}
+            {seeMoreBtn && <div style={{ textAlign: "-webkit-center" }}><button className="more spotify" onClick={() => setLazyload(!lazyload)}>{lazyload ? "See more" : "See less"}</button></div>}
         </ul>
     );
 }
